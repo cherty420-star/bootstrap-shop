@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Интернет-магазин{% endblock %}</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --sidebar-width: 250px;
+            --primary-color: #0d6efd;
+            --dark-bg: #212529;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+
+        /* Боковое меню */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            box-shadow: 3px 0 10px rgba(0,0,0,0.1);
+        }
+
+        .sidebar .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            padding: 12px 20px;
+            border-radius: 0;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar .nav-link:hover,
+        .sidebar .nav-link.active {
+            color: white;
+            background-color: var(--primary-color);
+            border-left: 4px solid white;
+        }
+
+        .sidebar .nav-link i {
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Основной контент */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 25px;
+        }
+
+        /* Заголовки страниц */
+        .page-title {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        /* Карточки товаров */
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .product-card .card-header {
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: none;
+        }
+
+        .product-card .price {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .main-content {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                position: static;
+                width: 100%;
+                height: auto;
+                margin-bottom: 20px;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+        }
+    </style>
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- Боковое меню -->
+    <nav class="sidebar">
+        <div class="px-3 mb-4">
+            <h4 class="text-white mb-0">
+                <i class="bi bi-shop me-2"></i>Магазин
+            </h4>
+            <small class="text-muted">Интернет-магазин товаров</small>
+        </div>
+
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">
+                    <i class="bi bi-house-door me-2"></i> Главная
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/catalog' %}active{% endif %}" href="/catalog">
+                    <i class="bi bi-grid me-2"></i> Каталог
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/category' %}active{% endif %}" href="/category">
+                    <i class="bi bi-list-ul me-2"></i> Категории
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {% if request.path == '/contacts' %}active{% endif %}" href="/contacts">
+                    <i class="bi bi-telephone me-2"></i> Контакты
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="bi bi-bag me-2"></i> Заказы
+                </a>
+            </li>
+        </ul>
+
+        <div class="px-3 mt-5">
+            <div class="card bg-dark border-light">
+                <div class="card-body p-3">
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <i class="bi bi-person-circle fs-3 text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 text-white">Пользователь</h6>
+                            <small class="text-muted">Ваш профиль</small>
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button class="btn btn-outline-primary btn-sm w-100 mb-2">
+                            <i class="bi bi-person me-1"></i> Профиль
+                        </button>
+                        <button class="btn btn-outline-danger btn-sm w-100">
+                            <i class="bi bi-box-arrow-right me-1"></i> Выход
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

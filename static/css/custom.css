@@ -1,0 +1,22 @@
+
+    /* Дополнительные кастомные стили */
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        font-weight: 500;
+    }
+
+    /* Анимации */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .product-card {
+        animation: fadeIn 0.5s ease-out;
+    }
+    

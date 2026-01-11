@@ -1,0 +1,156 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Главная - Интернет-магазин{% endblock %}
+
+{% block content %}
+<!-- Информационный блок -->
+<div class="alert alert-info border-0 shadow-sm mb-4">
+    <div class="d-flex align-items-center">
+        <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+        <div>
+            <h4 class="alert-heading mb-1">Добро пожаловать!</h4>
+            <p class="mb-0">Вы находитесь на сайте, предназначенном для продажи товаров.</p>
+        </div>
+    </div>
+</div>
+
+<h1 class="page-title">Популярные товары</h1>
+
+<div class="row">
+    <!-- Товар 1 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card product-card border-primary">
+            <div class="card-header bg-primary text-white text-center py-3">
+                <h5 class="mb-0"><i class="bi bi-star-fill me-2"></i>Товар 1</h5>
+            </div>
+            <div class="card-body text-center p-4">
+                <div class="price text-primary">$ 100</div>
+                <ul class="list-unstyled text-start mb-4">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>10 users included</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>2 GB of storage</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Email support</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Help center access</span>
+                    </li>
+                </ul>
+                <button class="btn btn-primary btn-lg w-100 py-2">
+                    <i class="bi bi-cart-plus me-2"></i>Купить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Товар 2 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card product-card border-success">
+            <div class="card-header bg-success text-white text-center py-3">
+                <h5 class="mb-0"><i class="bi bi-lightning-fill me-2"></i>Товар 2</h5>
+            </div>
+            <div class="card-body text-center p-4">
+                <div class="price text-success">$ 100</div>
+                <ul class="list-unstyled text-start mb-4">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>10 users included</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>2 GB of storage</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Email support</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Help center access</span>
+                    </li>
+                </ul>
+                <button class="btn btn-success btn-lg w-100 py-2">
+                    <i class="bi bi-cart-plus me-2"></i>Купить
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Товар 3 -->
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card product-card border-warning">
+            <div class="card-header bg-warning text-white text-center py-3">
+                <h5 class="mb-0"><i class="bi bi-fire me-2"></i>Товар 3</h5>
+            </div>
+            <div class="card-body text-center p-4">
+                <div class="price text-warning">$ 100</div>
+                <ul class="list-unstyled text-start mb-4">
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>10 users included</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>2 GB of storage</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Email support</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-3 fs-5"></i>
+                        <span>Help center access</span>
+                    </li>
+                </ul>
+                <button class="btn btn-warning btn-lg w-100 py-2">
+                    <i class="bi bi-cart-plus me-2"></i>Купить
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Дополнительная информация -->
+<div class="row mt-5">
+    <div class="col-12">
+        <div class="card border-secondary">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="bi bi-info-square me-2"></i>О нашем магазине</h5>
+            </div>
+            <div class="card-body">
+                <p>Мы предлагаем широкий ассортимент товаров по доступным ценам. Все товары проходят проверку качества перед отправкой.</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="alert alert-success border-0">
+                            <i class="bi bi-truck fs-4 me-2"></i>
+                            <strong>Бесплатная доставка</strong>
+                            <p class="mb-0 small">При заказе от $200</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="alert alert-primary border-0">
+                            <i class="bi bi-shield-check fs-4 me-2"></i>
+                            <strong>Гарантия качества</strong>
+                            <p class="mb-0 small">30 дней на возврат</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="alert alert-warning border-0">
+                            <i class="bi bi-headset fs-4 me-2"></i>
+                            <strong>Поддержка 24/7</strong>
+                            <p class="mb-0 small">Всегда на связи</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

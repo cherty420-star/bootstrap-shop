@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Каталог - Интернет-магазин{% endblock %}
+
+{% block content %}
+<!-- Заголовок и фильтры -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="page-title mb-0">Каталог товаров</h1>
+    <div>
+        <button class="btn btn-primary">
+            <i class="bi bi-plus-circle me-2"></i>Добавить товар
+        </button>
+    </div>
+</div>
+
+<!-- Фильтры -->
+<div class="card border-info mb-4">
+    <div class="card-header bg-info text-white">
+        <h5 class="mb-0"><i class="bi bi-funnel me-2"></i>Фильтры</h5>
+    </div>
+    <div class="card-body">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Категория</label>
+                <select class="form-select">
+                    <option selected>Все категории</option>
+                    <option>Электроника</option>
+                    <option>Одежда</option>
+                    <option>Книги</option>
+                    <option>Дом и сад</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Сортировка</label>
+                <select class="form-select">
+                    <option selected>По популярности</option>
+                    <option>По цене (возрастание)</option>
+                    <option>По цене (убывание)</option>
+                    <option>По новизне</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Цена</label>
+                <input type="text" class="form-control" placeholder="Макс. цена">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">&nbsp;</label>
+                <button class="btn btn-success w-100">
+                    <i class="bi bi-filter me-2"></i>Применить
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Карточки товаров -->
+<div class="row">
+    <!-- Товар 1 -->
+    <div class="col-lg-6 mb-4">
+        <div class="card product-card bg-light border-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <span class="badge bg-primary rounded-pill px-3 py-2">Новинка</span>
+                        <span class="badge bg-success rounded-pill px-3 py-2 ms-2">В наличии</span>
+                    </div>
+                    <div class="text-muted">
+                        <i class="bi bi-clock me-1"></i><small>9 mins ago</small>
+                    </div>
+                </div>
+                <p class="card-text mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="text-primary fw-bold">$ 89.99</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2">
+                            <i class="bi bi-eye me-1"></i>View
+                        </button>
+                        <button class="btn btn-outline-success btn-sm">
+                            <i class="bi bi-pencil me-1"></i>Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Товар 2 -->
+    <div class="col-lg-6 mb-4">
+        <div class="card product-card bg-light border-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <span class="badge bg-warning rounded-pill px-3 py-2">Хит продаж</span>
+                        <span class="badge bg-danger rounded-pill px-3 py-2 ms-2">Осталось мало</span>
+                    </div>
+                    <div class="text-muted">
+                        <i class="bi bi-clock me-1"></i><small>15 mins ago</small>
+                    </div>
+                </div>
+                <p class="card-text mb-4">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="text-primary fw-bold">$ 149.99</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2">
+                            <i class="bi bi-eye me-1"></i>View
+                        </button>
+                        <button class="btn btn-outline-success btn-sm">
+                            <i class="bi bi-pencil me-1"></i>Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Товар 3 -->
+    <div class="col-lg-6 mb-4">
+        <div class="card product-card bg-light border-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <span class="badge bg-info rounded-pill px-3 py-2">Со скидкой</span>
+                        <span class="badge bg-success rounded-pill px-3 py-2 ms-2">В наличии</span>
+                    </div>
+                    <div class="text-muted">
+                        <i class="bi bi-clock me-1"></i><small>22 mins ago</small>
+                    </div>
+                </div>
+                <p class="card-text mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="text-primary fw-bold">$ 199.99</span>
+                        <span class="text-decoration-line-through text-muted ms-2">$ 249.99</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2">
+                            <i class="bi bi-eye me-1"></i>View
+                        </button>
+                        <button class="btn btn-outline-success btn-sm">
+                            <i class="bi bi-pencil me-1"></i>Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Товар 4 -->
+    <div class="col-lg-6 mb-4">
+        <div class="card product-card bg-light border-0">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-start mb-3">
+                    <div>
+                        <span class="badge bg-secondary rounded-pill px-3 py-2">Бестселлер</span>
+                        <span class="badge bg-success rounded-pill px-3 py-2 ms-2">В наличии</span>
+                    </div>
+                    <div class="text-muted">
+                        <i class="bi bi-clock me-1"></i><small>5 mins ago</small>
+                    </div>
+                </div>
+                <p class="card-text mb-4">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="text-primary fw-bold">$ 299.99</span>
+                    </div>
+                    <div>
+                        <button class="btn btn-outline-primary btn-sm me-2">
+                            <i class="bi bi-eye me-1"></i>View
+                        </button>
+                        <button class="btn btn-outline-success btn-sm">
+                            <i class="bi bi-pencil me-1"></i>Edit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Пагинация -->
+<nav aria-label="Навигация" class="mt-4">
+    <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+            <a class="page-link" href="#">
+                <i class="bi bi-chevron-left"></i>
+            </a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+            <a class="page-link" href="#">
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+<!-- Статистика -->
+<div class="card border-secondary mt-5">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0"><i class="bi bi-bar-chart me-2"></i>Статистика каталога</h5>
+    </div>
+    <div class="card-body">
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <div class="p-3 bg-primary bg-opacity-10 rounded">
+                    <h3 class="text-primary">42</h3>
+                    <p class="mb-0">Всего товаров</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="p-3 bg-success bg-opacity-10 rounded">
+                    <h3 class="text-success">38</h3>
+                    <p class="mb-0">В наличии</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="p-3 bg-warning bg-opacity-10 rounded">
+                    <h3 class="text-warning">4</h3>
+                    <p class="mb-0">Нет в наличии</p>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="p-3 bg-info bg-opacity-10 rounded">
+                    <h3 class="text-info">12</h3>
+                    <p class="mb-0">Новинки</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

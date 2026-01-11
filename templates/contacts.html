@@ -1,0 +1,225 @@
+{% extends "base.html" %}
+
+{% block title %}Контакты - Интернет-магазин{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Контакты</h1>
+
+<div class="row">
+    <!-- Контактная информация -->
+    <div class="col-lg-6 mb-5">
+        <div class="card border-primary h-100">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="bi bi-telephone me-2"></i>Наши контакты</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                <hr class="my-4">
+
+                <!-- Контактные данные -->
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <div class="bg-primary text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-geo-alt fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Адрес</h6>
+                                <p class="mb-0 text-muted">г. Москва, ул. Примерная, д. 1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <div class="bg-success text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-telephone fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Телефон</h6>
+                                <p class="mb-0 text-muted">+7 (999) 123-45-67</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <div class="bg-warning text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-envelope fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Email</h6>
+                                <p class="mb-0 text-muted">info@example.com</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <div class="d-flex align-items-center p-3 bg-light rounded">
+                            <div class="bg-info text-white rounded-circle p-3 me-3">
+                                <i class="bi bi-clock fs-4"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-1">Режим работы</h6>
+                                <p class="mb-0 text-muted">Пн-Пт: 9:00-18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карта -->
+                <div class="mt-4">
+                    <div class="bg-secondary text-white p-3 rounded text-center">
+                        <i class="bi bi-map fs-4 me-2"></i>
+                        <span>Здесь будет карта</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Форма обратной связи -->
+    <div class="col-lg-6">
+        <div class="card border-success shadow">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0"><i class="bi bi-chat-dots me-2"></i>Обратная связь</h5>
+            </div>
+            <div class="card-body p-4">
+                <form method="POST" action="/">
+                    <div class="mb-3">
+                        <label for="emailInput" class="form-label">Email адрес</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-envelope"></i>
+                            </span>
+                            <input type="email" class="form-control" id="emailInput" name="email"
+                                   placeholder="ваш@email.com" required>
+                        </div>
+                        <div class="form-text">Мы никогда никому не передадим вашу электронную почту.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="nameInput" class="form-label">Ваше имя</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                            </span>
+                            <input type="text" class="form-control" id="nameInput" name="name"
+                                   placeholder="Иван Иванов" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="subjectSelect" class="form-label">Тема обращения</label>
+                        <select class="form-select" id="subjectSelect" name="subject">
+                            <option selected>Выберите тему</option>
+                            <option value="support">Техническая поддержка</option>
+                            <option value="order">Вопрос по заказу</option>
+                            <option value="product">Вопрос о товаре</option>
+                            <option value="other">Другое</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="messageTextarea" class="form-label">Ваше сообщение</label>
+                        <textarea class="form-control" id="messageTextarea" name="message"
+                                  rows="4" placeholder="Опишите ваш вопрос или предложение..."
+                                  required></textarea>
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="feedbackCheck" name="subscribe">
+                        <label class="form-check-label" for="feedbackCheck">
+                            Я хочу получать обратную связь
+                        </label>
+                    </div>
+
+                    <!-- Примечание из макета -->
+                    <div class="alert alert-warning border-0 mb-4">
+                        <div class="d-flex align-items-center">
+                            <i class="bi bi-exclamation-triangle me-3"></i>
+                            <div class="small">
+                                While these feedback styles cannot be styled with CSS, you can still customize the feedback text through JavaScript.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-success btn-lg">
+                            <i class="bi bi-send me-2"></i>Отправить сообщение
+                        </button>
+                        <button type="reset" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-clockwise me-2"></i>Очистить форму
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Информация о поддержке -->
+        <div class="card border-info mt-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="bi bi-headset me-2"></i>Служба поддержки</h5>
+            </div>
+            <div class="card-body">
+                <div class="row text-center">
+                    <div class="col-md-6 mb-3">
+                        <div class="p-3 bg-light rounded">
+                            <i class="bi bi-clock-history text-primary fs-1 mb-3"></i>
+                            <h6>Время ответа</h6>
+                            <p class="mb-0 text-muted">В течение 24 часов</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="p-3 bg-light rounded">
+                            <i class="bi bi-chat-left-text text-success fs-1 mb-3"></i>
+                            <h6>Онлайн-чат</h6>
+                            <p class="mb-0 text-muted">Круглосуточно</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ -->
+<div class="card border-secondary mt-5">
+    <div class="card-header bg-secondary text-white">
+        <h5 class="mb-0"><i class="bi bi-question-circle me-2"></i>Часто задаваемые вопросы</h5>
+    </div>
+    <div class="card-body">
+        <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faqOne" aria-expanded="true">
+                        Как сделать заказ?
+                    </button>
+                </h2>
+                <div id="faqOne" class="accordion-collapse collapse show"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Выберите товар в каталоге, нажмите кнопку "Купить" и следуйте инструкциям.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#faqTwo">
+                        Какие способы оплаты доступны?
+                    </button>
+                </h2>
+                <div id="faqTwo" class="accordion-collapse collapse"
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        Мы принимаем банковские карты, электронные кошельки и наличные при получении.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
